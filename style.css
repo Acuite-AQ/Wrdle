@@ -1,0 +1,54 @@
+/* On met le fond en noir comme le vrai Wordle */
+html, body {
+    background-color: var(--default);
+}
+
+/* On initalisate les couleurs que l'on réutilisera pour les différents cas de figure */
+:root {
+    --default: #121213;
+    --false: #3a3a3c;
+    --almost: #b59f3d;
+    --right: #538d4e;
+}
+
+/* On met l'en-tête en blanc et centré pour être plus lisible */
+#intro {
+    color: white;
+    text-align: center;
+}
+
+/* Préparation des paramètres de la grille de jeu */
+.grid {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(4, auto);
+}
+
+/* Préparation des paramètres des cases de jeu */
+.box {
+    width: 85px;
+    height: 85px;
+    text-transform: uppercase;
+    border: 2px solid var(--false);
+    margin: 3px;
+    display: grid;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color:white;
+}
+
+/* Si case fausse alors on change la couleur en gris */
+.box.false {
+    background: var(--false);
+}
+
+/* Si lettre juste mais placement alors on change la couleur en orange */
+.box.almost {
+    background: var(--almost);
+}
+
+/* Si case juste alors on change la couleur en vert */
+.box.right {
+    background: var(--right);
+}
